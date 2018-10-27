@@ -13,7 +13,7 @@ DIRS_523=fa18-523-51 fa18-523-52 fa18-523-53 fa18-523-54 fa18-523-56 fa18-523-57
 
 DIRS_516=fa18-516-26 fa18-516-02 fa18-516-03 fa18-516-11 fa18-516-04 fa18-516-06 fa18-516-08 fa18-516-10 fa18-516-12 fa18-516-14 fa18-516-17 fa18-516-18 fa18-516-19 fa18-516-21 fa18-516-22 fa18-516-29 fa18-516-31  fa18-516-24 
 
-DIRS-423=fa18-423-01 fa18-423-02 fa18-423-03 fa18-423-04 fa18-423-05 fa18-423-06 fa18-423-08
+DIRS_423=fa18-423-01 fa18-423-02 fa18-423-03 fa18-423-04 fa18-423-05 fa18-423-06 fa18-423-08
 
 BROKEN=fal18-516-23 fal18-516-25
 
@@ -101,6 +101,13 @@ push:
 		cd $$i ; git push; cd ..; \
 	done ;
 
+bib-tech:
+	-for i in ../../cloudmesh/technologies/bib/*.bib; do \
+			echo $$i; \
+			cp $$i bib; \
+			biber -q --tool -V $$i >> biber.log ; \
+			cat $$i >> dest/all.bib; \
+	done
 
 bib-projects:
 	mkdir -p dest
@@ -116,6 +123,7 @@ bib-projects:
 			cat bib/report-$$i.bib >> dest/all.bib; \
 		fi ; \
 	done ;
+	make -f Makefile bib-tech
 	rm -f */*.blg
 
 bib-papers:
@@ -134,6 +142,7 @@ bib-papers:
 			cat bib/report-$$i.bib >> dest/all.bib; \
 		fi ; \
 	done ;
+	make -f Makefile bib-tech
 	rm -f */*.blg
 
 biblog:
