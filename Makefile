@@ -111,7 +111,7 @@ update: $(DIRS)
 list:
 	python list.py  > list.md
 	pandoc list.md -o list.html --css=template/table.css
-
+	git commit -m "update the list" list.md; git push
 
 all: $(DIRS) bib-projects projects bib-papers papers
 
