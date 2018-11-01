@@ -29,8 +29,6 @@ for readme in files:
             print(exc)
 
 
-#pprint (readmes)
-
 # print(yaml.dump(readmes, default_flow_style=False))
 
 
@@ -146,6 +144,11 @@ def print_community(community):
         entry["counter"] = counter
         counter = counter + 1
 
-        print ("| {counter} | {semester} | {readme} | {lastname} | {firstname} | {community} | {t1} | {t2} | {t3} | {t4} | {t5} | {t6} | {paper} | {project} |".format(**entry))
+        if community in entry["hid"]:
+            print ("| {counter} | {semester} | {readme} | {lastname} | {firstname} | {community} | {t1} | {t2} | {t3} | {t4} | {t5} | {t6} | {paper} | {project} |".format(**entry))
 
-print_community("523")
+for c in ["523", "423", "516"]:
+    print ("#", c)
+    print("\n")
+    print_community(c)
+    print("\n")
