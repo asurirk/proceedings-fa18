@@ -7,7 +7,7 @@ files = glob.glob("fa18*/README.yml")
 
 ERROR=":o:"
 SMILEY=":smiley:"
-REVIEWED=":explanation:"
+REVIEWED=":exclamation:"
 WAVE=":wave:"
 HAND=":hand:"
 
