@@ -6,6 +6,10 @@ import os
 files = glob.glob("fa18*/README.yml")
 
 ERROR=":o:"
+SMILEY=":smiley:"
+REVIEWED=":explanation:"
+WAVE=":wave:"
+HAND=":hand:"
 
 def read_technology(url):
     filename = url.replace("https://github.com/cloudmesh/technologies/blob/master", "../../cloudmesh/technologies")
@@ -31,6 +35,7 @@ for readme in files:
 
 
 counter = 1
+
 
 def print_community(community):
     global counter
@@ -83,16 +88,16 @@ def print_community(community):
                         content = read_technology(url)
                         
                         if ":smiley:" in content:
-                            status = "+"
+                            status = SMILEY
                         elif ":hand:" in content:
-                            status = "-"
+                            status = HAND
                         elif ":wave:" in content:
-                            status = "w"
+                            status = WAVE
                             
                         if ":exclamation:" in content:
-                            status = status + "r"
+                            status = status + REVIEWED
                         if ":o:" in content:
-                            status = status + "o"
+                            status = status + ERROR
                             
                         entry[t] = "{status}[{t}]({url})".format(t=t,url=url, status=status)
                             
