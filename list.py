@@ -77,17 +77,23 @@ def print_community(community):
                 c = -1
                 for t in ["t1", "t2", "t3", "t4", "t5", "t6"]:
                     c = c + 1
+                    status = "?"
                     try:
-                        status = "?"
                         url = s["technologies"][c]["url"]
                         content = read_technology(url)
+                        
                         if ":smiley:" in content:
                             status = "+"
                         elif ":hand:" in content:
                             status = "-"
                         elif ":wave:" in content:
                             status = "w"
-                        
+                            
+                        if ":exclamation:" in content:
+                            status = status + "r"
+                        if ":o:" in content:
+                            status = status + "o"
+                            
                         entry[t] = "{status}[{t}]({url})".format(t=t,url=url, status=status)
                             
                     except Exception as e:
