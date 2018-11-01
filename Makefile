@@ -10,7 +10,6 @@ RESOURCE=--resource-path=$(IMAGE_DIRS)
 CSL=--csl=template/ieee-with-url.csl
 
 DIRS_523=\
- fa18-523-51\
  fa18-523-52\
  fa18-523-53\
  fa18-523-54\
@@ -64,10 +63,8 @@ DIRS_516=\
  fa18-516-31
 
 DIRS_423=\
- fa18-423-01\
  fa18-423-02\
  fa18-423-03\
- fa18-423-04\
  fa18-423-05\
  fa18-423-06\
  fa18-423-07\
