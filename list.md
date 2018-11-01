@@ -1,5 +1,3 @@
-:explanation:
-
 | n | semester | hid | lastname | firstname | community | t1 | t2 | t3 | t4 | t5 | t6 | paper | project |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | fa18 | [fa18-523-59](https://github.com/cloudmesh-community/fa18-523-59/blob/master/README.yml) | Bhutka | Jatinkumar | i523 | :smiley::exclamation::o:[t1](https://github.com/cloudmesh/technologies/blob/master/chapters/tech/azure-sql.md) | :smiley::exclamation::o:[t2](https://github.com/cloudmesh/technologies/blob/master/chapters/tech/pybrain.md) | :smiley:[t3](https://github.com/cloudmesh/technologies/blob/master/chapters/tech/libcloud.md) | :smiley:[t4](https://github.com/cloudmesh/technologies/blob/master/chapters/tech/openstack-keystone.md) | N/A | N/A | [IOT](https://github.com/cloudmesh-community/fa18-523-71/blob/master/paper/paper.md) | [TBD](https://github.com/cloudmesh-community/fa18-523-71/tree/master/project-report) |
