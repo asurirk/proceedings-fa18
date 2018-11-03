@@ -76,7 +76,9 @@ DIRS=$(DIRS_516) $(DIRS_523) $(DIRS_423)
 DIRS_PAPERS=$(DIRS_516) $(DIRS_523)
 
 .PHONY: $(DIRS) all bib dest
-all: $(DIRS)
+
+#all: clean $(DIRS)
+all: clean $(DIRS) bib projects papers
 
 PROJECT_VOL10: 
 
@@ -113,9 +115,10 @@ list:
 	pandoc list.md -o list.html --css=template/table.css
 	git commit -m "update the list" list.md; git push
 
-all: $(DIRS) bib-projects projects bib-papers papers
 
-projects: 
+
+
+projects: bib
 	mkdir -p dest
 	echo > dest/projects.md
 	cat project-report/report.md >> dest/projects.md
@@ -132,7 +135,7 @@ projects:
 #	cd dest; pandoc $(RESOURCE) --number-sections -V secnumdepth:5 --pdf-engine=xelatex -f markdown+smart --toc --epub-embed-font='fonts/*.ttf' --template=../template/eisvogel/eisvogel.latex --listings --bibliography all.bib -o $(FILENAME).pdf metadata.txt $(INDEX)
 	echo "open $(FILENAME)-projects.epub"
 
-papers:
+papers: bib
 	mkdir -p dest
 	echo > dest/projects.md
 	cat paper/paper.md >> dest/paper.md
@@ -155,37 +158,42 @@ push:
 		cd $$i ; git push; cd ..; \
 	done ;
 
-bib-tech:
+bib: dest/all.bib
+
+
+dest/all.bib: dest/projects.bib dest/papers.bib dest/tech.bib dest/all.bib
+	cat dest/projects.bib dest/papers.bib dest/tech.bib > dest/all.bib
+
+dest/tech.bib:
 	-for i in ../../cloudmesh/technologies/bib/*.bib; do \
 			echo $$i; \
 			cp $$i bib; \
 			biber -q --tool -V $$i >> biber.log ; \
-			cat $$i >> dest/all.bib; \
+			cat $$i >> dest/tech.bib; \
 	done
 
-bib-projects:
+dest/projects.bib:
 	mkdir -p dest
 	mkdir -p bib
 	rm -f */*.blg
 	rm -f biber.log
-	echo > dest/all.bib
+	echo >> dest/projects.bib
 	cp project-report/*.bib bib
 	-for i in $(DIRS); do \
 		if [ -e $$i/project-report/report.bib ] ; then \
 			cp $$i/project-report/report.bib bib/report-$$i.bib; \
 			biber -q --tool -V bib/report-$$i.bib >> biber.log ; \
-			cat bib/report-$$i.bib >> dest/all.bib; \
+			cat bib/report-$$i.bib >> dest/projects.bib; \
 		fi ; \
 	done ;
-	make -f Makefile bib-tech
 	rm -f */*.blg
 
-bib-papers:
+dest/papers.bib:
 	mkdir -p dest
 	mkdir -p bib
 	rm -f */*.blg
 	rm -f biber.log
-	echo > dest/all.bib
+	echo >> dest/papers.bib
 	mkdir -p dest/images
 	cp */paper/images/* dest/images
 	#cp papers/*.bib bib
@@ -193,10 +201,9 @@ bib-papers:
 		if [ -e $$i/paper/paper.bib ] ; then \
 			cp $$i/paper/paper.bib bib/paper-$$i.bib; \
 			biber -q --tool -V bib/papr-$$i.bib >> biber.log ; \
-			cat bib/report-$$i.bib >> dest/all.bib; \
+			cat bib/paper-$$i.bib >> dest/papers.bib; \
 		fi ; \
 	done ;
-	make -f Makefile bib-tech
 	rm -f */*.blg
 
 biblog:
