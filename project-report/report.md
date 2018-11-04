@@ -1,9 +1,9 @@
-# Sample Paper :hand: fa18-523-000, fa18-523-001
+# Sample Project Report :hand: fa18-523-000 fa18-523-001
 
 | Gregor von Laszewski, Albert Zweistein
 | laszewski@gmail.com, zwei@example.edu
 | Indiana University, Example University
-| hid: fa18-523-000, fa18-523-001
+| hid: fa18-523-000 fa18-523-001
 | github: [:cloud:](https://github.com/cloudmesh-community/proceedings-fa18/blob/master/project-report/report.md)
 | code: [:cloud:](https://github.com/cloudmesh-community/proceedings-fa18/blob/master/project-code)
 
