@@ -1,7 +1,3 @@
-while scanning a simple key
-  in "fa18-516-22/README.yml", line 11, column 7
-could not find expected ':'
-  in "fa18-516-22/README.yml", line 12, column 1
 # 523
 
 
@@ -71,7 +67,8 @@ could not find expected ':'
 | 12 | fa18 | [fa18-516-08](https://github.com/cloudmesh-community/fa18-516-08/blob/master/README.yml) | Joshi | Varun | e516 | N/A | N/A | N/A | N/A | N/A | N/A | [GDPR](https://github.com/cloudmesh-community/fa18-516-08/blob/master/paper/paper.md) | [project](TBD) |
 | 13 | fa18 | [fa18-516-06](https://github.com/cloudmesh-community/fa18-516-06/blob/master/README.yml) | Filliman | Paul | e516 | N/A | N/A | N/A | N/A | N/A | N/A | [Azure Data Services](https://github.com/cloudmesh-community/fa18-516-06/blob/master/chapter/whatever.md) | [Azure Data](https://github.com/cloudmesh-community/fa18-516-06/blob/master/chapter/whatever.md) |
 | 14 | fa18 | [fa18-516-14](https://github.com/cloudmesh-community/fa18-516-14/blob/master/README.yml) | Manipon | Gerald | e516 | N/A | N/A | N/A | N/A | N/A | N/A | [Cloud use cases](https://github.com/cloudmesh-community/book/blob/master/chapters/cloud/use-cases.md) | [hybrid cloud science data system kubernetes](https://github.com/cloudmesh-community/fa18-516-14/tree/master/project-report/) |
-| 15 | ![:o:](images/o.png) | [fa18-516-24](https://github.com/cloudmesh-community/fa18-516-24/blob/master/README.yml) | Withana | Sachith | e516 | N/A | N/A | N/A | N/A | N/A | N/A | [Pi Spark](https://github.com/cloudmesh-community/book/blob/master/chapters/pi/clusters/pi-spark.md) | [Pi Spark](https://github.com/cloudmesh-community/fa18-516-24/tree/master/project-paper) |
-| 16 | ![:o:](images/o.png) | [fa18-516-12](https://github.com/cloudmesh-community/fa18-516-12/blob/master/README.yml) | Luo | Yu | e516 | N/A | N/A | N/A | N/A | N/A | N/A | [paper](None) | [project](None) |
+| 15 | ![:o:](images/o.png) | [fa18-516-22](https://github.com/cloudmesh-community/fa18-516-22/blob/master/README.yml) | Sims | Ian | e516 | N/A | N/A | N/A | N/A | N/A | N/A | [AWS EMR](https://github.com/cloudmesh-community/fa18-516-22/blob/master/chapter/AWS-EMR.md) | [AWS EMR](url in your hid space or that of your partner) |
+| 16 | ![:o:](images/o.png) | [fa18-516-24](https://github.com/cloudmesh-community/fa18-516-24/blob/master/README.yml) | Withana | Sachith | e516 | N/A | N/A | N/A | N/A | N/A | N/A | [Pi Spark](https://github.com/cloudmesh-community/book/blob/master/chapters/pi/clusters/pi-spark.md) | [Pi Spark](https://github.com/cloudmesh-community/fa18-516-24/tree/master/project-paper) |
+| 17 | ![:o:](images/o.png) | [fa18-516-12](https://github.com/cloudmesh-community/fa18-516-12/blob/master/README.yml) | Luo | Yu | e516 | N/A | N/A | N/A | N/A | N/A | N/A | [paper](None) | [project](None) |
 
 
