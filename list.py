@@ -11,6 +11,10 @@ REVIEWED=":exclamation:"
 WAVE=":wave:"
 HAND=":hand:"
 
+ERROR="![:o:](images/o.png)"
+SMILEY="![:smiley:](images/smiley.png)"
+REVIEWED="![:exclamation:](images/exclamation.png)"
+
 def read_technology(url):
     filename = url.replace("https://github.com/cloudmesh/technologies/blob/master", "../../cloudmesh/technologies")
     with open(filename, "r") as f:
