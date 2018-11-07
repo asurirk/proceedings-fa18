@@ -131,7 +131,7 @@ projects: bib
 	cd dest; echo "# Refernces\n\n" >> all.md
 	cp -r template dest
 	cd dest; pandoc $(RESOURCE) $(MARKDOWN-OPTIONS)  $(FORMAT) $(FONTS) $(BIB)  $(CSL) $(CSS) -o $(FILENAME)-projects.epub ../metadata-projects.txt all.md
-	cp dest/$(FILENAME)-projects.epub . 
+	cp dest/$(FILENAME)-projects.epub .
 #	cd dest; pandoc $(RESOURCE) --number-sections -V secnumdepth:5 --pdf-engine=xelatex -f markdown+smart --toc --epub-embed-font='fonts/*.ttf' --template=../template/eisvogel/eisvogel.latex --listings --bibliography all.bib -o $(FILENAME).pdf metadata.txt $(INDEX)
 	echo "open $(FILENAME)-projects.epub"
 
@@ -163,6 +163,7 @@ bib: dest/all.bib
 
 dest/all.bib: dest/projects.bib dest/papers.bib dest/tech.bib dest/all.bib
 	cat dest/projects.bib dest/papers.bib dest/tech.bib > dest/all.bib
+	cd dest; dos2unix all.bib
 
 dest/tech.bib:
 	-for i in ../../cloudmesh/technologies/bib/*.bib; do \
