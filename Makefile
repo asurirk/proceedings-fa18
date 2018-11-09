@@ -127,7 +127,8 @@ projects: bib
 		cat $$i/project-report/report.md >> dest/projects.md ; \
 		echo "\n" >> dest/projects.md ; \
 	done ;
-	cd dest; iconv -t utf-8 projects.md > all.md
+	cd dest; cat ../other-projects.md > all.md
+	cd dest; iconv -t utf-8 projects.md >> all.md
 	cd dest; echo "# Refernces\n\n" >> all.md
 	cp -r template dest
 	cd dest; pandoc $(RESOURCE) $(MARKDOWN-OPTIONS)  $(FORMAT) $(FONTS) $(BIB)  $(CSL) $(CSS) -o $(FILENAME)-projects.epub ../metadata-projects.txt all.md
@@ -143,7 +144,8 @@ papers: bib
 		cat $$i/paper/paper.md >> dest/paper.md ; \
 		echo "\n" >> dest/paper.md ; \
 	done ;
-	cd dest; iconv -t utf-8 paper.md > all.md
+	cd dest; cat ../other-chpaters.md > all.md
+	cd dest; iconv -t utf-8 paper.md >> all.md
 	cd dest; echo "# Refernces\n\n" >> all.md
 	cp -r template dest
 	cd dest; pandoc $(RESOURCE) $(MARKDOWN-OPTIONS)  $(FORMAT) $(FONTS) $(BIB)  $(CSL) $(CSS) -o $(FILENAME)-papers.epub ../metadata-papers.txt all.md
