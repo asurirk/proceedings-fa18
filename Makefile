@@ -144,7 +144,7 @@ papers: bib
 		cat $$i/paper/paper.md >> dest/paper.md ; \
 		echo "\n" >> dest/paper.md ; \
 	done ;
-	cd dest; cat ../other-chpaters.md > all.md
+	cd dest; cat ../other-papers.md > all.md
 	cd dest; iconv -t utf-8 paper.md >> all.md
 	cd dest; echo "# Refernces\n\n" >> all.md
 	cp -r template dest
