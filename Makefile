@@ -128,6 +128,7 @@ projects: bib
 		echo "\n" >> dest/projects.md ; \
 	done ;
 	cd dest; cat ../other-projects.md > all.md
+#	cd dest; cat ../list.md >> all.md
 	cd dest; iconv -t utf-8 projects.md >> all.md
 	cd dest; echo "# Refernces\n\n" >> all.md
 	cp -r template dest
@@ -145,6 +146,7 @@ papers: bib
 		echo "\n" >> dest/paper.md ; \
 	done ;
 	cd dest; cat ../other-papers.md > all.md
+#	cd dest; cat ../list.md >> all.md
 	cd dest; iconv -t utf-8 paper.md >> all.md
 	cd dest; echo "# Refernces\n\n" >> all.md
 	cp -r template dest
