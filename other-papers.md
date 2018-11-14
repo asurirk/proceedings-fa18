@@ -297,3 +297,30 @@ Please put here your links in the following format
 * Other (contribute to the AWS in cm4 project): <https://github.com/cloudmesh-community/cm/tree/master/cm4/aws>
 * Other (contribute to the vm in cm4 project): <https://github.com/cloudmesh-community/cm/tree/master/cm4/vm>
 * Other (contribute to the MongoDB in cm4 project): <https://github.com/cloudmesh-community/cm/tree/master/cm4/cmmongo>
+* Project: cm4
+
+# fa18-516-31, Jordan Spell
+* 
+* 
+
+# fa18-516-25, Chun Sheng Wu
+* Section: <https://github.com/cloudmesh-community/cm/tree/master/cm4/vagrant/vagrant.py>
+* Section: <https://github.com/cloudmesh-community/cm/tree/master/cm4/openstack/OpenstackCM.py>
+* Paper: <https://github.com/cloudmesh-community/cm/tree/master/cm4/vagrant/README.md>
+* Other (contribute to cm4 project): <https://github.com/cloudmesh-community/cm/tree/master/cm4/configrue/name.py>
+* Project: cm4
+
+# fa18-516-24, Sachith Withana
+* Section: <https://github.com/cloudmesh-community/cm/tree/master/cm4/configuration>
+* Chapter: <https://github.com/cloudmesh-community/book/blob/master/chapters/pi/clusters/pi-spark.md>
+* Project: cm4 <https://github.com/cloudmesh-community/cm>
+* Other (Contributed to the CM Vagrant Script): <https://github.com/cloudmesh-community/cm/tree/master/cm4/vagrant>
+* Other (Ansible Spark Cluster): <https://github.com/swsachith/pi-spark-cluster>
+* Other (Config file): <https://github.com/cloudmesh-community/cm/tree/master/cm4/configuration>
+* Other (Counter): <https://github.com/cloudmesh-community/cm/tree/master/cm4/configuration>
+
+# fa18-516-23, Anand Sriramulu
+* Section: <https://github.com/cloudmesh-community/book/blob/master/chapters/faas/openfaas.md>
+* Chapter: <https://github.com/cloudmesh-community/book/blob/master/chapters/pi/setup-multiple.md>
+* Paper: <https://github.com/cloudmesh-community/cm-burn/blob/master/README.md>
+* Project: <https://github.com/cloudmesh-community/fa18-516-23/blob/master/project-paper/paper.md>
