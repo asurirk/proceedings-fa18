@@ -318,6 +318,7 @@ Please put here your links in the following format
 * Other (Ansible Spark Cluster): <https://github.com/swsachith/pi-spark-cluster>
 * Other (Config file): <https://github.com/cloudmesh-community/cm/tree/master/cm4/configuration>
 * Other (Counter): <https://github.com/cloudmesh-community/cm/tree/master/cm4/configuration>
+* Other (CM4 REST API): <https://github.com/cloudmesh-community/cm/tree/master/cm4/flask_rest_api>
 
 # fa18-516-23, Anand Sriramulu
 * Section: <https://github.com/cloudmesh-community/book/blob/master/chapters/faas/openfaas.md>
