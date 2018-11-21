@@ -58,6 +58,16 @@ for your drawings.
 ![A simple flow chart](images/from-one-to-the-other.png){#fig:fromonetotheorther}
 ```
 
+If the paper is copied form another source you MUST use a citation in the caption. 
+
+![A simple flow chart [@vonLaszwski-fa18-sample-report]](images/from-one-to-the-other.png){#fig:fromonetotheorther}
+
+This is done as follows
+
+```
+![A simple flow chart [@vonLaszwski-fa18-sample-report]](images/from-one-to-the-other.png){#fig:fromonetotheorther}
+```
+
 ## Design 
 
 ## Architecture
