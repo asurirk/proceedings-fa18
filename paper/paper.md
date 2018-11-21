@@ -52,7 +52,12 @@ for your drawings.
 ![A simple flow chart](images/from-one-to-the-other.png){#fig:fromonetotheorther}
 ```
 
-Intriduce sections as needed. If you write a very long text over
+If the paper is copied form another source you MUST use a citation in the caption. 
+
+![A simple flow chart [@vonLaszwski-fa18-sample-report]](images/from-one-to-the-other.png){#fig:fromonetotheorther}
+
+
+Introduce sections as needed. If you write a very long text over
 multiple pages consided introducing sections and subsections.
 
 ## Workbreakdown
