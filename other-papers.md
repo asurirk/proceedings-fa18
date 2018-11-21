@@ -7,21 +7,7 @@ Please put here your links in the following format
 If your paper or project report is located elsewhere, please modify
 this file in github or better contact the TAs
 
-fa18-523-79, Abhishek Rapelli
 
-:o: wrong filenames, need to be fixed
-
-  * Project: <https://github.com/cloudmesh-community/fa18-523-81/blob/master/Project/Project-Proposal.md>
-  * Paper: <https://github.com/cloudmesh-community/fa18-523-79/blob/master/Paper/Paper.md>
-
-fa18-523-70, Sushmita Dash
-
-  * Project: :o:
-
-fa18-523-82, Pavan Kumar Madineni
-
-  * Project: :o:
-  * Paper: <https://github.com/cloudmesh-community/fa18-523-82/blob/master/paper/paper.md>
 
 ## 423
 
