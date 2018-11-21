@@ -56,6 +56,11 @@ If the paper is copied form another source you MUST use a citation in the captio
 
 ![A simple flow chart [@vonLaszwski-fa18-sample-report]](images/from-one-to-the-other.png){#fig:fromonetotheorther}
 
+This is done as follows
+
+```
+![A simple flow chart [@vonLaszwski-fa18-sample-report]](images/from-one-to-the-other.png){#fig:fromonetotheorther}
+```
 
 Introduce sections as needed. If you write a very long text over
 multiple pages consided introducing sections and subsections.
