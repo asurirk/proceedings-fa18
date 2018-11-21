@@ -9,6 +9,9 @@ FONTS=--epub-embed-font='fonts/*.ttf'
 RESOURCE=--resource-path=$(IMAGE_DIRS)
 CSL=--csl=template/ieee-with-url.csl
 
+DIRS_SP18=\
+  hid-sp18-602
+
 DIRS_523=\
  fa18-523-52\
  fa18-523-53\
@@ -71,9 +74,9 @@ DIRS_423=\
  fa18-423-08
 
 
-DIRS=$(DIRS_516) $(DIRS_523) $(DIRS_423) 
+DIRS=$(DIRS_516) $(DIRS_523) $(DIRS_423) $(DIRS_SP18)
 
-DIRS_PAPERS=$(DIRS_516) $(DIRS_523)
+DIRS_PAPERS=$(DIRS_516) $(DIRS_523) $(DIRS_SP18)
 
 .PHONY: $(DIRS) all bib dest
 
