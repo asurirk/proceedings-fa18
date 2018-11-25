@@ -1,6 +1,3 @@
-while scanning for the next token
-found character '\t' that cannot start any token
-  in "fa18-516-25/README.yml", line 11, column 92
 # 523
 
 
@@ -71,8 +68,9 @@ found character '\t' that cannot start any token
 | 13 | fa18 | [fa18-516-06](https://github.com/cloudmesh-community/fa18-516-06/blob/master/README.yml) | Filliman | Paul | e516 | N/A | N/A | N/A | N/A | N/A | N/A | [Azure Data Services](https://github.com/cloudmesh-community/fa18-516-06/blob/master/chapter/whatever.md) | [Azure Data](https://github.com/cloudmesh-community/fa18-516-06/blob/master/chapter/whatever.md) |
 | 14 | fa18 | [fa18-516-14](https://github.com/cloudmesh-community/fa18-516-14/blob/master/README.yml) | Manipon | Gerald | e516 | N/A | N/A | N/A | N/A | N/A | N/A | [Cloud use cases](https://github.com/cloudmesh-community/book/blob/master/chapters/cloud/use-cases.md) | [hybrid cloud science data system kubernetes](https://github.com/cloudmesh-community/fa18-516-14/blob/master/project-report/report.md) |
 | 15 | ![:o:](images/o.png) | [fa18-516-22](https://github.com/cloudmesh-community/fa18-516-22/blob/master/README.yml) | Sims | Ian | e516 | N/A | N/A | N/A | N/A | N/A | N/A | [AWS EMR](https://github.com/cloudmesh-community/fa18-516-22/blob/master/chapter/AWS-EMR.md) | [AWS EMR](https://github.com/cloudmesh-community/fa18-516-22/blob/master/project-report/report.md) |
-| 16 | ![:o:](images/o.png) | [fa18-516-24](https://github.com/cloudmesh-community/fa18-516-24/blob/master/README.yml) | Withana | Sachith | e516 | N/A | N/A | N/A | N/A | N/A | N/A | ![:o:](images/o.png) | [project](https://github.com/cloudmesh-community/cm) |
-| 17 | fa18 | [fa18-516-23](https://github.com/cloudmesh-community/fa18-516-23/blob/master/README.yml) | Sriramulu | Anand | e516 | N/A | N/A | N/A | N/A | N/A | N/A | [PI, cm-burn, cluster](https://github.com/cloudmesh-community/book/blob/master/chapters/pi/setup-multiple.md) | [Cloud Computing, FaaS, OpenFaaS, PI, cm-burn, docker, kubernetes](https://github.com/cloudmesh-community/fa18-516-11/blob/master/project-report/report.md) |
-| 18 | ![:o:](images/o.png) | [fa18-516-12](https://github.com/cloudmesh-community/fa18-516-12/blob/master/README.yml) | Luo | Yu | e516 | N/A | N/A | N/A | N/A | N/A | N/A | [paper](None) | [project](https://github.com/cloudmesh-community/cm) |
+| 16 | ![:o:](images/o.png) | [fa18-516-25](https://github.com/cloudmesh-community/fa18-516-25/blob/master/README.yml) | Wu | Chun Sheng | e516 | N/A | N/A | N/A | N/A | N/A | N/A | ![:o:](images/o.png) | [project](https://github.com/cloudmesh-community/cm) |
+| 17 | ![:o:](images/o.png) | [fa18-516-24](https://github.com/cloudmesh-community/fa18-516-24/blob/master/README.yml) | Withana | Sachith | e516 | N/A | N/A | N/A | N/A | N/A | N/A | ![:o:](images/o.png) | [project](https://github.com/cloudmesh-community/cm) |
+| 18 | fa18 | [fa18-516-23](https://github.com/cloudmesh-community/fa18-516-23/blob/master/README.yml) | Sriramulu | Anand | e516 | N/A | N/A | N/A | N/A | N/A | N/A | [PI, cm-burn, cluster](https://github.com/cloudmesh-community/book/blob/master/chapters/pi/setup-multiple.md) | [Cloud Computing, FaaS, OpenFaaS, PI, cm-burn, docker, kubernetes](https://github.com/cloudmesh-community/fa18-516-11/blob/master/project-report/report.md) |
+| 19 | ![:o:](images/o.png) | [fa18-516-12](https://github.com/cloudmesh-community/fa18-516-12/blob/master/README.yml) | Luo | Yu | e516 | N/A | N/A | N/A | N/A | N/A | N/A | [paper](None) | [project](https://github.com/cloudmesh-community/cm) |
 
 
