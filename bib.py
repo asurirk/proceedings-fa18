@@ -1,8 +1,9 @@
-#!/usr/bin/env python
+#! /usr/bin/env python
 import glob
 from pprint import pprint
 import oyaml as yaml
 import os
+import sys
 
 files = glob.glob("fa18*/README.yml")
 
@@ -34,17 +35,73 @@ for readme in files:
             print(exc)
 
 
+paper_template = '''
+@InBook{open}{LABEL},
+  author =       "{name}",
+  editor =       "Gregor von Laszewski",
+  title =        "{title}",
+  publisher =    "Indiana University",
+  year =         "2018",
+  volume =       "Fall 2018",
+  series =       "Class",
+  type =         "Paper",
+  address =      "Bloomington, IN 47408",
+  month =        dec,
+  note =         "Online",
+  url =          "{url}"
+{close}
+'''
+
+project_template = '''
+@InBook{open}{LABEL},
+  author =       "{name}",
+  editor =       "Gregor von Laszewski",
+  title =        "{title}",
+  publisher =    "Indiana University",
+  year =         "2018",
+  volume =       "Fall 2018",
+  series =       "Class",
+  type =         "Project",
+  address =      "Bloomington, IN 47408",
+  month =        dec,
+  note =         "Online",
+  url =          "{url}"
+{close}
+'''
+
+            
+def print_ref(data, kind):
+#    pprint(data)
+    if kind in data:
+        counter = 0
+        for p in data[kind]:
+            data["kind"] = kind
+            data["close"] = "}"
+            data["open"] = "{"            
+            data["counter"] = counter
+            data["LABEL"] = "{hid}-{kind}-{counter}".format(**data["owner"], **data)
+            data["name"] = "{firstname} {lastname}".format(**data["owner"])
+            if "url" not in data[kind][counter] or \
+               "title" not in data[kind][counter]:
+                pass
+            else:
+                print(paper_template.format(**data, **data[kind][counter]))
+            counter = counter + 1    
+            
 # print(yaml.dump(readmes, default_flow_style=False))
 
+for hid in readmes:
+
+    print_ref(readmes[hid], "project")
+    print_ref(readmes[hid], "paper")    
 
 
+
+sys.exit()
 
 def print_community(community):
 
     counter = 1
-
-    print ("| n | semester | hid | lastname | firstname | community | t1 | t2 | t3 | t4 | t5 | t6 | paper | project |")
-    print ("| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |")
     for hid in readmes:
         entry = {
             "semester": ERROR,
@@ -64,6 +121,7 @@ def print_community(community):
             "projectkey": "project",
             "paperkey": "paper",                                
             }
+
         try:
             s = readmes[hid]
             entry["readme"] = "[{hid}](https://github.com/cloudmesh-community/{hid}/blob/master/README.yml)".format(hid=hid)
