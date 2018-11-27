@@ -54,17 +54,17 @@ for your drawings.
 
 If the paper is copied form another source you MUST use a citation in the caption. 
 
-![A simple flow chart [@vonLaszwski-fa18-sample-report]](images/from-one-to-the-other.png){#fig:fromonetotheorther}
+![A simple flow chart [@vonLaszwski-fa18-sample-report] ](images/from-one-to-the-other.png){#fig:fromonetotheorther}
 
-This is done as follows
+This is done as follows, where all of this is in one line without spaces between the various brackets
 
 ```
-![A simple flow chart [@vonLaszwski-fa18-sample-report]](images/from-one-to-the-other.png){#fig:fromonetotheorther}
+![A simple flow chart [@vonLaszwski-fa18-sample-report] ](images/from-one-to-the-other.png){#fig:fromonetotheorther}
 ```
 
 Introduce sections as needed. If you write a very long text over
 multiple pages consided introducing sections and subsections.
-
+  
 ## Workbreakdown
 
 Only needed if you work in a group.
