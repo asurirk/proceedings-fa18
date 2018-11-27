@@ -5,7 +5,7 @@ IMAGE_DIRS=$(shell ./bin/find-image-dirs.py)
 MARKDOWN-OPTIONS=--verbose $(MERMAID) --filter pandoc-fignos -f markdown+header_attributes -f markdown+smart -f markdown+emoji --indented-code-classes=bash,python,yaml
 FORMAT=--toc --number-sections
 BIB=--bibliography all.bib
-FONTS=--epub-embed-font='fonts/\*.ttf'
+FONTS=--epub-embed-font='fonts/*.ttf'
 RESOURCE=--resource-path=$(IMAGE_DIRS)
 CSL=--csl=template/ieee-with-url.csl
 
@@ -123,9 +123,9 @@ list:
 
 pdf:
 	ebook-convert vonLaszewski-proceedings-fa18-projects.epub vonLaszewski-proceedings-fa18-projects.pdf
-#	ebook-convert vonLaszewski-proceedings-fa18-papers.epub vonLaszewski-proceedings-fa18-papers.pdf
+	ebook-convert vonLaszewski-proceedings-fa18-papers.epub vonLaszewski-proceedings-fa18-papers.pdf
 
-projects: bib
+projects: bib dest/fonts
 	mkdir -p dest
 	echo > dest/projects.md
 	cat project-report/report.md >> dest/projects.md
@@ -144,7 +144,7 @@ projects: bib
 #	cd dest; pandoc $(RESOURCE) --number-sections -V secnumdepth:5 --pdf-engine=xelatex -f markdown+smart --toc --epub-embed-font='fonts/*.ttf' --template=../template/eisvogel/eisvogel.latex --listings --bibliography all.bib -o $(FILENAME).pdf metadata.txt $(INDEX)
 	echo "open $(FILENAME)-projects.epub"
 
-papers: bib
+papers: bib dest/fonts
 	mkdir -p dest
 	echo > dest/projects.md
 	cat paper/paper.md >> dest/paper.md
@@ -175,8 +175,8 @@ dest/fonts:
 	cp -r ../book/template/fonts dest/fonts
 
 
-dest/all.bib: dest/projects.bib dest/papers.bib dest/tech.bib dest/all.bib dest/report.bib 
-	cat dest/projects.bib dest/papers.bib dest/tech.bib > dest/all.bib
+dest/all.bib: dest/projects.bib dest/papers.bib dest/tech.bib dest/report.bib dest/all.bib 
+	cat dest/projects.bib dest/papers.bib dest/tech.bib dest/report.bib > dest/all.bib
 	cd dest; dos2unix all.bib
 
 dest/tech.bib:
