@@ -5,7 +5,7 @@ IMAGE_DIRS=$(shell ./bin/find-image-dirs.py)
 MARKDOWN-OPTIONS=--verbose $(MERMAID) --filter pandoc-fignos -f markdown+header_attributes -f markdown+smart -f markdown+emoji --indented-code-classes=bash,python,yaml
 FORMAT=--toc --number-sections
 BIB=--bibliography all.bib
-FONTS=--epub-embed-font='fonts/*.ttf'
+FONTS=--epub-embed-font='fonts/\*.ttf'
 RESOURCE=--resource-path=$(IMAGE_DIRS)
 CSL=--csl=template/ieee-with-url.csl
 
@@ -63,10 +63,8 @@ DIRS_516=\
  fa18-516-24\
  fa18-516-26\
  fa18-516-29\
- fa18-516-31\
  fa18-516-25\
  fa18-516-31\
- fa18-516-24\
  fa18-516-23
 
 DIRS_423=\
@@ -123,7 +121,9 @@ list:
 	git commit -m "update the list" list.md; git push
 
 
-
+pdf:
+	ebook-convert vonLaszewski-proceedings-fa18-projects.epub vonLaszewski-proceedings-fa18-projects.pdf
+#	ebook-convert vonLaszewski-proceedings-fa18-papers.epub vonLaszewski-proceedings-fa18-papers.pdf
 
 projects: bib
 	mkdir -p dest
@@ -171,8 +171,11 @@ push:
 
 bib: dest/all.bib
 
+dest/fonts:
+	cp -r ../book/template/fonts dest/fonts
 
-dest/all.bib: dest/projects.bib dest/papers.bib dest/tech.bib dest/all.bib
+
+dest/all.bib: dest/projects.bib dest/papers.bib dest/tech.bib dest/all.bib dest/report.bib 
 	cat dest/projects.bib dest/papers.bib dest/tech.bib > dest/all.bib
 	cd dest; dos2unix all.bib
 
@@ -183,6 +186,9 @@ dest/tech.bib:
 			biber -q --tool -V $$i >> biber.log ; \
 			cat $$i >> dest/tech.bib; \
 	done
+
+dest/report.bib:
+	cp bib/report.bib dest
 
 dest/projects.bib:
 	mkdir -p dest

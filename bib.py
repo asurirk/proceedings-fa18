@@ -34,59 +34,87 @@ for readme in files:
         except yaml.YAMLError as exc:
             print(exc)
 
-
-paper_template = '''
+template = {}
+template['paper'] = '''
 @InBook{open}{LABEL},
   author =       "{name}",
   editor =       "Gregor von Laszewski",
-  title =        "{title}",
+  title =        "Paper: {title}",
   publisher =    "Indiana University",
   year =         "2018",
   volume =       "Fall 2018",
   series =       "Class",
   type =         "Paper",
   address =      "Bloomington, IN 47408",
-  month =        dec,
+  month =        nov,
   note =         "Online",
+  keywords =     "Fall 2018, {keywords}"
   url =          "{url}"
 {close}
 '''
 
-project_template = '''
+template['project'] = '''
 @InBook{open}{LABEL},
   author =       "{name}",
   editor =       "Gregor von Laszewski",
-  title =        "{title}",
+  title =        "Project: {title}",
   publisher =    "Indiana University",
   year =         "2018",
   volume =       "Fall 2018",
   series =       "Class",
   type =         "Project",
   address =      "Bloomington, IN 47408",
-  month =        dec,
+  month =        nov,
   note =         "Online",
+  keywords =     "Fall 2018, {keywords}"
   url =          "{url}"
 {close}
 '''
 
             
 def print_ref(data, kind):
-#    pprint(data)
+    #print()
+    #pprint(data)
+    if "paper" not in data:
+        return
     if kind in data:
         counter = 0
+        # pprint(data)
         for p in data[kind]:
-            data["kind"] = kind
-            data["close"] = "}"
-            data["open"] = "{"            
-            data["counter"] = counter
-            data["LABEL"] = "{hid}-{kind}-{counter}".format(**data["owner"], **data)
-            data["name"] = "{firstname} {lastname}".format(**data["owner"])
-            if "url" not in data[kind][counter] or \
-               "title" not in data[kind][counter]:
-                pass
-            else:
-                print(paper_template.format(**data, **data[kind][counter]))
-            counter = counter + 1    
+            output = False
+            if "group" not in p:
+                p["group"] = data["owner"]["hid"]
+            if p["group"].startswith(data["owner"]["hid"]):
+                output = True
+
+            #pprint (p)
+            if  "title" not in p:
+                output = False
+            #else:
+                output = "tbd" not in p["title"].lower()
+
+            if output:
+                data["keywords"] = kind
+                data["kind"] = kind
+                data["close"] = "}"
+                data["open"] = "{"            
+                data["counter"] = counter
+                data["LABEL"] = "{hid}-{kind}-{counter}".format(**data["owner"], **data)
+                #data["name"] = "{firstname} {lastname}".format(**data["owner"])
+                a = ""
+                g = ' '.join(p["group"].replace(",", " ").split()).split(" ")
+                # print ("G", g)
+                authors = []
+                for author_hid in g:
+                    a = readmes[author_hid]["owner"]
+                    authors.append("{firstname} {lastname}".format(**a))
+                data["name"] = " and ".join(authors)
+                if "url" not in data[kind][counter] or \
+                   "title" not in data[kind][counter]:
+                    pass
+                else:
+                    print(template[kind].format(**data, **data[kind][counter]))
+                counter = counter + 1    
             
 # print(yaml.dump(readmes, default_flow_style=False))
 
