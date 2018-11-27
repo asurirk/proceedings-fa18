@@ -64,7 +64,7 @@ This is done as follows
 
 Introduce sections as needed. If you write a very long text over
 multiple pages consided introducing sections and subsections.
-
+  
 ## Workbreakdown
 
 Only needed if you work in a group.
