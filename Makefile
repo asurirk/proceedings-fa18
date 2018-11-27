@@ -139,7 +139,8 @@ projects: bib dest/fonts
 	cd dest; iconv -t utf-8 projects.md >> all.md
 	cd dest; echo "# Refernces\n\n" >> all.md
 	cp -r template dest
-	cd dest; pandoc $(RESOURCE) $(MARKDOWN-OPTIONS)  $(FORMAT) $(FONTS) $(BIB)  $(CSL) $(CSS) -o $(FILENAME)-projects.epub ../metadata-projects.txt all.md
+	cp metadata-projects.yaml dest/metadata.yaml
+	cd dest; pandoc $(RESOURCE) $(MARKDOWN-OPTIONS)  $(FORMAT) $(FONTS) $(BIB)  $(CSL) $(CSS) -o $(FILENAME)-projects.epub metadata.yaml all.md
 	cp dest/$(FILENAME)-projects.epub .
 #	cd dest; pandoc $(RESOURCE) --number-sections -V secnumdepth:5 --pdf-engine=xelatex -f markdown+smart --toc --epub-embed-font='fonts/*.ttf' --template=../template/eisvogel/eisvogel.latex --listings --bibliography all.bib -o $(FILENAME).pdf metadata.txt $(INDEX)
 	echo "open $(FILENAME)-projects.epub"
@@ -157,7 +158,8 @@ papers: bib dest/fonts
 	cd dest; iconv -t utf-8 paper.md >> all.md
 	cd dest; echo "# Refernces\n\n" >> all.md
 	cp -r template dest
-	cd dest; pandoc $(RESOURCE) $(MARKDOWN-OPTIONS)  $(FORMAT) $(FONTS) $(BIB)  $(CSL) $(CSS) -o $(FILENAME)-papers.epub ../metadata-papers.txt all.md
+	cp metadata-papers.yaml dest/metadata.yaml
+	cd dest; pandoc $(RESOURCE) $(MARKDOWN-OPTIONS)  $(FORMAT) $(FONTS) $(BIB)  $(CSL) $(CSS) -o $(FILENAME)-papers.epub metadata.yaml all.md
 	cp dest/$(FILENAME)-papers.epub . 
 #	cd dest; pandoc $(RESOURCE) --number-sections -V secnumdepth:5 --pdf-engine=xelatex -f markdown+smart --toc --epub-embed-font='fonts/*.ttf' --template=../template/eisvogel/eisvogel.latex --listings --bibliography all.bib -o $(FILENAME).pdf metadata.txt $(INDEX)
 	echo "open $(FILENAME)-papers.epub"
