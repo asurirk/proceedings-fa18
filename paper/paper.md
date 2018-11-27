@@ -56,7 +56,7 @@ If the paper is copied form another source you MUST use a citation in the captio
 
 ![A simple flow chart [@vonLaszwski-fa18-sample-report] ](images/from-one-to-the-other.png){#fig:fromonetotheorther}
 
-This is done as follows
+This is done as follows, where all of this is in one line without spaces between the various brackets
 
 ```
 ![A simple flow chart [@vonLaszwski-fa18-sample-report] ](images/from-one-to-the-other.png){#fig:fromonetotheorther}
