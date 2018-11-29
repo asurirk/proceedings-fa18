@@ -38,8 +38,13 @@ appropriate for your project.
 
 ## Requirements
 
+
+### Images
+
+Image locations that start with http are not allowed. All images must be in an images folder within your directory.
+
 All images must be referred to in the text. The words bellow and above
-must not be used in your paper for images, tables, and code.
+must not be used in your paper for images, tables, and code. For code you coul use following. Above and bellow in a paper means you ask the reader to look at their shows or the ceiling :smiley:.
 
 +@fig:fromonetotheorther shows a nice figure exported from Powerpoint
 to png. If you like you can use this as a basis for your drawings.
@@ -68,7 +73,7 @@ This is done as follows
 ![A simple flow chart [@vonLaszwski-fa18-sample-report]](images/from-one-to-the-other.png){#fig:fromonetotheorthertwo}
 ```
 
-## Sylistic Issues
+### Sylistic Issues
 
 Your report must not include the phrases
 
@@ -101,9 +106,6 @@ In case you want to copy part of this document you need to do this from raw mode
 CHANGE THE IMAGE REFERNCES. THIS IS LOGICAL AS ALL IMAGE REFERNCES
 MUST BE UNIQUE.**
 
-### Images
-
-Image locations that start with http are not allowed. All images must be in an images folder within your directory.
 
 ## Design 
 
