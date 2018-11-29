@@ -89,6 +89,11 @@ In stead you use
 
 You will not use the word I but instead you will use we or third person.
 
+**YOU MUST NOT COPY THIS EXAMPLE IN YOUR REPORTS. IF YOU DO YOU MUST
+CHANGE THE IMAGE REFERNCES. THIS IS LOGICAL AS ALL IMAGE REFERNCES
+MUST BE UNIQUE.**
+
+
 ## Design 
 
 ## Architecture
