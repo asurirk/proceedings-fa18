@@ -80,7 +80,7 @@ Your report must not include the phrases
 
 or similar
 
-In stead you use
+Instead you use
 
 * We show
 * We describe
@@ -92,6 +92,10 @@ You will not use the word I but instead you will use we or third person.
 **YOU MUST NOT COPY THIS EXAMPLE IN YOUR REPORTS. IF YOU DO YOU MUST
 CHANGE THE IMAGE REFERNCES. THIS IS LOGICAL AS ALL IMAGE REFERNCES
 MUST BE UNIQUE.**
+
+### Copy from this document
+
+In case you want to copy part of this document you need to do this from raw mode
 
 
 ## Design 
