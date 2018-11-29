@@ -44,7 +44,15 @@ appropriate for your project.
 Image locations that start with http are not allowed. All images must be in an images folder within your directory.
 
 All images must be referred to in the text. The words bellow and above
-must not be used in your paper for images, tables, and code. For code you coul use following. Above and bellow in a paper means you ask the reader to look at their shows or the ceiling :smiley:.
+must not be used in your paper for images, tables, and code. For code you could use 
+
+> In the following 
+
+> As explained next
+
+> We install the softwere with
+
+Comment: Above and bellow in a paper means you ask the reader to look at their shoes or the ceiling :smiley:.
 
 +@fig:fromonetotheorther shows a nice figure exported from Powerpoint
 to png. If you like you can use this as a basis for your drawings.
