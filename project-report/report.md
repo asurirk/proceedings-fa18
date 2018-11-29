@@ -87,16 +87,23 @@ Instead you use
 * We have
 * We do
 
-You will not use the word I but instead you will use we or third person.
+You will not use the word `I` but instead you will use `we` or third person.
 
-**YOU MUST NOT COPY THIS EXAMPLE IN YOUR REPORTS. IF YOU DO YOU MUST
-CHANGE THE IMAGE REFERNCES. THIS IS LOGICAL AS ALL IMAGE REFERNCES
-MUST BE UNIQUE.**
+
 
 ### Copy from this document
 
 In case you want to copy part of this document you need to do this from raw mode
 
+* <https://raw.githubusercontent.com/cloudmesh-community/proceedings-fa18/master/project-report/report.md>
+
+**HOWEVER, YOU MUST NOT COPY THIS EXAMPLE IN YOUR REPORTS. IF YOU DO YOU MUST
+CHANGE THE IMAGE REFERNCES. THIS IS LOGICAL AS ALL IMAGE REFERNCES
+MUST BE UNIQUE.**
+
+### Images
+
+Image locations that start with http are not allowed. All images must be in an images folder within your directory.
 
 ## Design 
 
