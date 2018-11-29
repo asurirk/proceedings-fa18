@@ -68,6 +68,27 @@ This is done as follows
 ![A simple flow chart [@vonLaszwski-fa18-sample-report]](images/from-one-to-the-other.png){#fig:fromonetotheorthertwo}
 ```
 
+## Sylistic Issues
+
+Your report must not include the phrases
+
+
+* In this term project we show
+* In this project we describe
+* In this chapter we have
+* In this report we do
+
+or similar
+
+In stead you use
+
+* We show
+* We describe
+* We have
+* We do
+
+You will not use the word I but instead you will use we or third person.
+
 ## Design 
 
 ## Architecture
