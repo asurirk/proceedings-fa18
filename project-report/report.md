@@ -46,11 +46,15 @@ Image locations that start with http are not allowed. All images must be in an i
 All images must be referred to in the text. The words bellow and above
 must not be used in your paper for images, tables, and code. For code you could use 
 
+> In the previous
+
 > In the following 
 
 > As explained next
 
 > We install the softwere with
+
+BUT DO NOT USE THEM FOR IMAGES, ANY IMAGE MUST HAVE A MEANINGFUL CAPTION AS SHOWN IN OUR EXAMPLE
 
 Comment: Above and bellow in a paper means you ask the reader to look at their shoes or the ceiling :smiley:.
 
