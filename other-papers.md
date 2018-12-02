@@ -182,3 +182,6 @@ fa18-516-23, Anand Sriramulu
   * Project: <https://github.com/cloudmesh-community/fa18-516-23/blob/master/project-paper/paper.md>
 
 
+Murali, Cheruvu, hid: fa18-516-11
+  
+*  url: https://github.com/cloudmesh-community/book/blob/master/chapters/cloud/cloud_foundry.md
