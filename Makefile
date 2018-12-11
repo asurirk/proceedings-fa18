@@ -9,8 +9,11 @@ FONTS=--epub-embed-font='fonts/*.ttf'
 RESOURCE=--resource-path=$(IMAGE_DIRS)
 CSL=--csl=template/ieee-with-url.csl
 
+TODO=\
+ fa18-516-29 fa18-523-68 fa18-523-70  fa18-523-86 fa18-423-08 hid-sp18-709  
+
 DIRS_SP18=\
-  hid-sp18-602 hid-sp18-711 hid-sp18-709 hid-sp18-705 hid-sp18-520 hid-sp18-523
+  hid-sp18-602 hid-sp18-711  hid-sp18-705 hid-sp18-520 hid-sp18-523 
 
 DIRS_523=\
  fa18-523-52\
@@ -28,9 +31,7 @@ DIRS_523=\
  fa18-523-65\
  fa18-523-66\
  fa18-523-67\
- fa18-523-68\
  fa18-523-69\
- fa18-523-70\
  fa18-523-71\
  fa18-523-72\
  fa18-523-73\
@@ -42,7 +43,6 @@ DIRS_523=\
  fa18-523-83\
  fa18-523-84\
  fa18-523-85\
- fa18-523-86\
  fa18-523-88
 
 DIRS_516=\
@@ -62,7 +62,6 @@ DIRS_516=\
  fa18-516-22\
  fa18-516-24\
  fa18-516-26\
- fa18-516-29\
  fa18-516-25\
  fa18-516-31\
  fa18-516-23
@@ -72,11 +71,11 @@ DIRS_423=\
  fa18-423-03\
  fa18-423-05\
  fa18-423-06\
- fa18-423-07\
- fa18-423-08
+ fa18-423-07
 
 
-DIRS=$(DIRS_516) $(DIRS_523) $(DIRS_423) $(DIRS_SP18)
+
+DIRS=$(DIRS_516) $(DIRS_523) $(DIRS_423) $(DIRS_SP18) #(TODO)
 
 DIRS_PAPERS=$(DIRS_516) $(DIRS_523) $(DIRS_SP18)
 
