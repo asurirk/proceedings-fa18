@@ -11,9 +11,12 @@ CSL=--csl=template/ieee-with-url.csl
 
 
 BROKEN=fa18-523-70
+OTHER=fa18-516-19  fa18-423-08
 
 TODO=\
- fa18-516-29 fa18-523-68 fa18-523-86 fa18-423-08 hid-sp18-709  
+ fa18-516-29 fa18-523-68 fa18-523-85 fa18-523-86 fa18-423-08 hid-sp18-709  
+
+
 
 DIRS_SP18=\
   hid-sp18-602 hid-sp18-711  hid-sp18-705 hid-sp18-520 hid-sp18-523 
@@ -76,8 +79,39 @@ DIRS_423=\
  fa18-423-06\
  fa18-423-07
 
-
-FALL18_PROJECTS=$(DIRS_516) $(DIRS_523) $(DIRS_423) $(DIRS_SP18) $(TODO)
+# FINAL
+FALL18_PROJECTS=\
+ fa18-516-08\
+ fa18-516-11\
+ fa18-516-14\
+ fa18-516-17\
+ fa18-516-18\
+ fa18-516-21\
+ fa18-516-22\
+ fa18-523-52\
+ fa18-523-53\
+ fa18-523-56\
+ fa18-523-57\
+ fa18-523-60\
+ fa18-523-61\
+ fa18-523-62\
+ fa18-523-65\
+ fa18-523-66\
+ fa18-523-71\
+ fa18-523-80\
+ fa18-523-83\
+ fa18-523-84\
+ fa18-523-88\
+ fa18-423-02\
+ fa18-423-03\
+ hid-sp18-602\
+ hid-sp18-711\
+ hid-sp18-705\
+ hid-sp18-520\
+ hid-sp18-523\
+ fa18-523-81\
+ fa18-523-73\
+ fa18-523-63
 
 FALL18_PAPERS=\
  fa18-516-06\
@@ -177,26 +211,33 @@ todopapers: $(TODO)
 
 fall18: fall18projects fall18papers
 
-fall18projects: bib dest/fonts $(FALL18_PROJECTS)
+#bib dest/fonts $(FALL18_PROJECTS)
+
+fall18projects: 
+	echo $(FALL18_PROJECTS)
 	FILENAME=vonLaszewski-proceedings-fa18
 	mkdir -p dest
 	echo > dest/projects.md
-	cat project-report/report.md >> dest/projects.md
+	cat project-report/report.md >> dest/report.md
+	echo > dest/all-in.md
+	echo > dest/all.bib
 	for i in $(FALL18_PROJECTS); do \
-		cat $$i/project-paper/report.md >> dest/projects.md ; \
-		cat $$i/project-report/report.md >> dest/projects.md ; \
-		echo "\n" >> dest/projects.md ; \
+		cat $$i/project-report/report.md >> dest/all-in.md ; \
+		echo "\n" >> dest/all-in.md ; \
+		cat $$i/project-report/report.bib >> dest/all.bib ; \
 	done ;
-	cd dest; cat ../other-projects.md > all.md
-#	cd dest; cat ../list.md >> all.md
-	cd dest; iconv -t utf-8 projects.md >> all.md
+	cd dest; iconv -t utf-8 all-in.md >> all.md
+	#cd dest; cat ../other-papers.md > all.md
+	#cd dest; cat ../list.md >> all.md
 	cd dest; echo "# Refernces\n\n" >> all.md
 	cp -r template dest
 	cp metadata-projects.yaml dest/metadata.yaml
 	cd dest; pandoc $(RESOURCE) $(MARKDOWN-OPTIONS)  $(FORMAT) $(FONTS) $(BIB)  $(CSL) $(CSS) -o $(FILENAME)-projects.epub metadata.yaml all.md
-	cp dest/$(FILENAME)-projects.epub .
+	cp dest/$(FILENAME)-projects.epub . 
 #	cd dest; pandoc $(RESOURCE) --number-sections -V secnumdepth:5 --pdf-engine=xelatex -f markdown+smart --toc --epub-embed-font='fonts/*.ttf' --template=../template/eisvogel/eisvogel.latex --listings --bibliography all.bib -o $(FILENAME).pdf metadata.txt $(INDEX)
 	echo "open $(FILENAME)-projects.epub"
+
+
 
 #bib dest/fonts $(FALL18_PAPERS)
 fall18papers: 
