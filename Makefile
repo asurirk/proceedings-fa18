@@ -9,6 +9,8 @@ FONTS=--epub-embed-font='fonts/*.ttf'
 RESOURCE=--resource-path=$(IMAGE_DIRS)
 CSL=--csl=template/ieee-with-url.csl
 
+
+
 TODO=\
  fa18-516-29 fa18-523-68 fa18-523-70  fa18-523-86 fa18-423-08 hid-sp18-709  
 
@@ -74,6 +76,10 @@ DIRS_423=\
  fa18-423-07
 
 
+FALL18_PROJECTS=$(DIRS_516) $(DIRS_523) $(DIRS_423) $(DIRS_SP18) #(TODO)
+
+FALL18_PAPERS=$(DIRS_516) $(DIRS_523) $(DIRS_SP18)
+
 
 DIRS=$(DIRS_516) $(DIRS_523) $(DIRS_423) $(DIRS_SP18) #(TODO)
 
@@ -90,6 +96,104 @@ PAPER_VOL10: fa18-516-04/section/vs-code.md
 
 help:
 	@cat README.md
+
+
+todoprojects: $(TODO)
+	DIRS=$(TODO)
+	FILENAME=vonLaszewski-proceedings-incomplete
+	bib dest/fonts
+	mkdir -p dest
+	echo > dest/projects.md
+	cat project-report/report.md >> dest/projects.md
+	for i in $(DIRS); do \
+		cat $$i/project-paper/report.md >> dest/projects.md ; \
+		cat $$i/project-report/report.md >> dest/projects.md ; \
+		echo "\n" >> dest/projects.md ; \
+	done ;
+	cd dest; cat ../other-projects.md > all.md
+#	cd dest; cat ../list.md >> all.md
+	cd dest; iconv -t utf-8 projects.md >> all.md
+	cd dest; echo "# Refernces\n\n" >> all.md
+	cp -r template dest
+	cp metadata-projects.yaml dest/metadata.yaml
+	cd dest; pandoc $(RESOURCE) $(MARKDOWN-OPTIONS)  $(FORMAT) $(FONTS) $(BIB)  $(CSL) $(CSS) -o $(FILENAME)-projects.epub metadata.yaml all.md
+	cp dest/$(FILENAME)-projects.epub .
+#	cd dest; pandoc $(RESOURCE) --number-sections -V secnumdepth:5 --pdf-engine=xelatex -f markdown+smart --toc --epub-embed-font='fonts/*.ttf' --template=../template/eisvogel/eisvogel.latex --listings --bibliography all.bib -o $(FILENAME).pdf metadata.txt $(INDEX)
+	echo "open $(FILENAME)-projects.epub"
+
+
+todopapers: $(TODO) 
+	DIRS=$(TODO)
+	FILENAME=vonLaszewski-proceedings-incomplete
+	bib dest/fonts
+	mkdir -p dest
+	echo > dest/projects.md
+	cat paper/paper.md >> dest/paper.md
+	for i in $(DIRS_PAPERS); do \
+		cat $$i/paper/paper.md >> dest/paper.md ; \
+		echo "\n" >> dest/paper.md ; \
+	done ;
+	cd dest; cat ../other-papers.md > all.md
+#	cd dest; cat ../list.md >> all.md
+	cd dest; iconv -t utf-8 paper.md >> all.md
+	cd dest; echo "# Refernces\n\n" >> all.md
+	cp -r template dest
+	cp metadata-papers.yaml dest/metadata.yaml
+	cd dest; pandoc $(RESOURCE) $(MARKDOWN-OPTIONS)  $(FORMAT) $(FONTS) $(BIB)  $(CSL) $(CSS) -o $(FILENAME)-papers.epub metadata.yaml all.md
+	cp dest/$(FILENAME)-papers.epub . 
+#	cd dest; pandoc $(RESOURCE) --number-sections -V secnumdepth:5 --pdf-engine=xelatex -f markdown+smart --toc --epub-embed-font='fonts/*.ttf' --template=../template/eisvogel/eisvogel.latex --listings --bibliography all.bib -o $(FILENAME).pdf metadata.txt $(INDEX)
+	echo "open $(FILENAME)-papers.epub"
+
+
+
+fall18: fall18projects fall18papers
+
+fall18projects: $(FALL18_PROJECTS)
+	DIRS=$(FALL18_PROJECTS)
+	FILENAME=vonLaszewski-proceedings-fa18
+	bib dest/fonts
+	mkdir -p dest
+	echo > dest/projects.md
+	cat project-report/report.md >> dest/projects.md
+	for i in $(DIRS); do \
+		cat $$i/project-paper/report.md >> dest/projects.md ; \
+		cat $$i/project-report/report.md >> dest/projects.md ; \
+		echo "\n" >> dest/projects.md ; \
+	done ;
+	cd dest; cat ../other-projects.md > all.md
+#	cd dest; cat ../list.md >> all.md
+	cd dest; iconv -t utf-8 projects.md >> all.md
+	cd dest; echo "# Refernces\n\n" >> all.md
+	cp -r template dest
+	cp metadata-projects.yaml dest/metadata.yaml
+	cd dest; pandoc $(RESOURCE) $(MARKDOWN-OPTIONS)  $(FORMAT) $(FONTS) $(BIB)  $(CSL) $(CSS) -o $(FILENAME)-projects.epub metadata.yaml all.md
+	cp dest/$(FILENAME)-projects.epub .
+#	cd dest; pandoc $(RESOURCE) --number-sections -V secnumdepth:5 --pdf-engine=xelatex -f markdown+smart --toc --epub-embed-font='fonts/*.ttf' --template=../template/eisvogel/eisvogel.latex --listings --bibliography all.bib -o $(FILENAME).pdf metadata.txt $(INDEX)
+	echo "open $(FILENAME)-projects.epub"
+
+
+fall18papers: $(FALL18_PAPERS) 
+	DIRS=$(FALL18_PAPERS)
+	FILENAME=vonLaszewski-proceedings-fa18
+	bib dest/fonts
+	mkdir -p dest
+	echo > dest/projects.md
+	cat paper/paper.md >> dest/paper.md
+	for i in $(DIRS_PAPERS); do \
+		cat $$i/paper/paper.md >> dest/paper.md ; \
+		echo "\n" >> dest/paper.md ; \
+	done ;
+	cd dest; cat ../other-papers.md > all.md
+#	cd dest; cat ../list.md >> all.md
+	cd dest; iconv -t utf-8 paper.md >> all.md
+	cd dest; echo "# Refernces\n\n" >> all.md
+	cp -r template dest
+	cp metadata-papers.yaml dest/metadata.yaml
+	cd dest; pandoc $(RESOURCE) $(MARKDOWN-OPTIONS)  $(FORMAT) $(FONTS) $(BIB)  $(CSL) $(CSS) -o $(FILENAME)-papers.epub metadata.yaml all.md
+	cp dest/$(FILENAME)-papers.epub . 
+#	cd dest; pandoc $(RESOURCE) --number-sections -V secnumdepth:5 --pdf-engine=xelatex -f markdown+smart --toc --epub-embed-font='fonts/*.ttf' --template=../template/eisvogel/eisvogel.latex --listings --bibliography all.bib -o $(FILENAME).pdf metadata.txt $(INDEX)
+	echo "open $(FILENAME)-papers.epub"
+
 
 
 $(DIRS):
