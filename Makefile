@@ -10,9 +10,10 @@ RESOURCE=--resource-path=$(IMAGE_DIRS)
 CSL=--csl=template/ieee-with-url.csl
 
 
+BROKEN=fa18-523-70
 
 TODO=\
- fa18-516-29 fa18-523-68 fa18-523-70  fa18-523-86 fa18-423-08 hid-sp18-709  
+ fa18-516-29 fa18-523-68 fa18-523-86 fa18-423-08 hid-sp18-709  
 
 DIRS_SP18=\
   hid-sp18-602 hid-sp18-711  hid-sp18-705 hid-sp18-520 hid-sp18-523 
@@ -78,7 +79,36 @@ DIRS_423=\
 
 FALL18_PROJECTS=$(DIRS_516) $(DIRS_523) $(DIRS_423) $(DIRS_SP18) $(TODO)
 
-FALL18_PAPERS=$(DIRS_516) $(DIRS_523) $(DIRS_SP18) $(TODO)
+FALL18_PAPERS=\
+ fa18-516-06\
+ fa18-516-08\
+ fa18-516-17\
+ fa18-523-52\
+ fa18-523-53\
+ fa18-523-56\
+ fa18-523-57\
+ fa18-523-58\
+ fa18-523-61\
+ fa18-523-65\
+ fa18-523-62\
+ fa18-523-69\
+ fa18-523-71\
+ fa18-523-73\
+ fa18-523-74\
+ fa18-523-79\
+ fa18-523-85\
+ hid-sp18-602\
+ hid-sp18-711\
+ hid-sp18-705\
+ hid-sp18-520\
+ hid-sp18-523\
+ fa18-523-82\
+ fa18-523-66\
+ fa18-523-80\
+ fa18-523-81\
+ fa18-523-88\
+ fa18-523-63
+
 
 
 DIRS=$(DIRS_516) $(DIRS_523) $(DIRS_423) $(DIRS_SP18) $(TODO)
@@ -90,9 +120,9 @@ DIRS_PAPERS=$(DIRS_516) $(DIRS_523) $(DIRS_SP18)
 #all: clean $(DIRS)
 all: clean $(DIRS) bib projects papers
 
-PROJECT_VOL10: 
+#PROJECT_VOL10: 
 
-PAPER_VOL10: fa18-516-04/section/vs-code.md
+#PAPER_VOL10: fa18-516-04/section/vs-code.md
 
 help:
 	@cat README.md
@@ -123,13 +153,12 @@ todoprojects: $(TODO)
 
 
 todopapers: $(TODO) 
-	DIRS=$(TODO)
-	FILENAME=vonLaszewski-proceedings-incomplete
+	FILENAME=vonLaszewski-proceedings-todo
 	bib dest/fonts
 	mkdir -p dest
 	echo > dest/projects.md
 	cat paper/paper.md >> dest/paper.md
-	for i in $(DIRS_PAPERS); do \
+	for i in $(TODO); do \
 		cat $$i/paper/paper.md >> dest/paper.md ; \
 		echo "\n" >> dest/paper.md ; \
 	done ;
@@ -148,14 +177,12 @@ todopapers: $(TODO)
 
 fall18: fall18projects fall18papers
 
-fall18projects: $(FALL18_PROJECTS)
-	DIRS=$(FALL18_PROJECTS)
+fall18projects: bib dest/fonts $(FALL18_PROJECTS)
 	FILENAME=vonLaszewski-proceedings-fa18
-	bib dest/fonts
 	mkdir -p dest
 	echo > dest/projects.md
 	cat project-report/report.md >> dest/projects.md
-	for i in $(DIRS); do \
+	for i in $(FALL18_PROJECTS); do \
 		cat $$i/project-paper/report.md >> dest/projects.md ; \
 		cat $$i/project-report/report.md >> dest/projects.md ; \
 		echo "\n" >> dest/projects.md ; \
@@ -171,21 +198,23 @@ fall18projects: $(FALL18_PROJECTS)
 #	cd dest; pandoc $(RESOURCE) --number-sections -V secnumdepth:5 --pdf-engine=xelatex -f markdown+smart --toc --epub-embed-font='fonts/*.ttf' --template=../template/eisvogel/eisvogel.latex --listings --bibliography all.bib -o $(FILENAME).pdf metadata.txt $(INDEX)
 	echo "open $(FILENAME)-projects.epub"
 
-
-fall18papers: $(FALL18_PAPERS) 
-	DIRS=$(FALL18_PAPERS)
+#bib dest/fonts $(FALL18_PAPERS)
+fall18papers: 
+	echo $(FALL18_PAPERS)
 	FILENAME=vonLaszewski-proceedings-fa18
-	bib dest/fonts
 	mkdir -p dest
 	echo > dest/projects.md
 	cat paper/paper.md >> dest/paper.md
-	for i in $(DIRS_PAPERS); do \
-		cat $$i/paper/paper.md >> dest/paper.md ; \
-		echo "\n" >> dest/paper.md ; \
+	echo > dest/all-in.md
+	echo > dest/all.bib
+	for i in $(FALL18_PAPERS); do \
+		cat $$i/paper/paper.md >> dest/all-in.md ; \
+		echo "\n" >> dest/all-in.md ; \
+		cat $$i/paper/paper.bib >> dest/all.bib ; \
 	done ;
-	cd dest; cat ../other-papers.md > all.md
-#	cd dest; cat ../list.md >> all.md
-	cd dest; iconv -t utf-8 paper.md >> all.md
+	cd dest; iconv -t utf-8 all-in.md >> all.md
+	#cd dest; cat ../other-papers.md > all.md
+	#cd dest; cat ../list.md >> all.md
 	cd dest; echo "# Refernces\n\n" >> all.md
 	cp -r template dest
 	cp metadata-papers.yaml dest/metadata.yaml
