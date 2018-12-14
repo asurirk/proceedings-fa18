@@ -1,0 +1,17 @@
+---
+title: Cloud Computing Papers
+creator:
+- role: editor
+  text: Gregor von Laszewski
+description: Big Data Applications
+rights: (c) Gregor von Laszewski, 2018
+language: en-US
+stylesheet: ../template/epub.css
+cover-image: ../cover/cover-papers.png
+fignos-caption-name: Figure
+fignos-plus-name: Figure
+xnos-number-sections: True
+keywords: [cloud, container]
+abstract: |
+  This book contains the papers
+...
