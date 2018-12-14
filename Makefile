@@ -100,14 +100,10 @@ FALL18_PROJECTS=\
  fa18-523-71\
  fa18-523-80\
  fa18-523-83\
- fa18-523-84\
  fa18-523-88\
- fa18-423-02\
  fa18-423-03\
  hid-sp18-602\
- hid-sp18-711\
  hid-sp18-705\
- hid-sp18-520\
  hid-sp18-523\
  fa18-523-81\
  fa18-523-73\
@@ -125,15 +121,12 @@ FALL18_PAPERS=\
  fa18-523-61\
  fa18-523-65\
  fa18-523-62\
- fa18-523-69\
  fa18-523-71\
  fa18-523-73\
  fa18-523-74\
  fa18-523-79\
  fa18-523-85\
  hid-sp18-602\
- hid-sp18-711\
- hid-sp18-705\
  hid-sp18-520\
  hid-sp18-523\
  fa18-523-82\
@@ -213,7 +206,8 @@ fall18: fall18projects fall18papers
 
 #bib dest/fonts $(FALL18_PROJECTS)
 
-fall18projects: 
+fall18projects:
+	make -f Makefile clean
 	echo $(FALL18_PROJECTS)
 	FILENAME=vonLaszewski-proceedings-fa18
 	mkdir -p dest
@@ -225,11 +219,12 @@ fall18projects:
 		cat $$i/project-report/report.md >> dest/all-in.md ; \
 		echo "\n" >> dest/all-in.md ; \
 		cat $$i/project-report/report.bib >> dest/all.bib ; \
+		cat $$i/paper/paper.bib >> dest/all.bib ; \
 	done ;
 	cd dest; iconv -t utf-8 all-in.md >> all.md
 	#cd dest; cat ../other-papers.md > all.md
 	#cd dest; cat ../list.md >> all.md
-	cd dest; echo "# Refernces\n\n" >> all.md
+
 	cp -r template dest
 	cp metadata-projects.yaml dest/metadata.yaml
 	cd dest; pandoc $(RESOURCE) $(MARKDOWN-OPTIONS)  $(FORMAT) $(FONTS) $(BIB)  $(CSL) $(CSS) -o $(FILENAME)-projects.epub metadata.yaml all.md
@@ -240,7 +235,8 @@ fall18projects:
 
 
 #bib dest/fonts $(FALL18_PAPERS)
-fall18papers: 
+fall18papers:
+	make -f Makefile clean
 	echo $(FALL18_PAPERS)
 	FILENAME=vonLaszewski-proceedings-fa18
 	mkdir -p dest
