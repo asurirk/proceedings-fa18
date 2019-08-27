@@ -7,7 +7,7 @@
 | github: [:cloud:](https://github.com/cloudmesh-community/proceedings-fa18/blob/master/project-report/report.md)
 | code: [:cloud:](https://github.com/cloudmesh-community/proceedings-fa18/blob/master/project-code)
 
-> When copying this fille. copy it from [Raw](https://raw.githubusercontent.com/cloudmesh-community/proceedings-fa18/master/project-report/report.md)
+> When copying this fille. copy it from [Raw](https://raw.githubusercontent.com/cloudmesh-community/proceedings-fa18/master/project-report/report.md) and remove this line.
 
 ---
 
