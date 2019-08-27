@@ -35,6 +35,17 @@ In [@vonLaszwski-fa18-sample-report] we can find a sample report.
 Naturally the headings are just suggestions and you may change them as
 appropriate for your project.
 
+## Emojies
+
+## Emojies in Headings
+
+* :o2: in the heading means paper is under development
+* :relaxed: in the heading means paper is ready for review development
+* :phone: You need help and a TA will contact you
+
+The emojies can also be used throughout the paper to indicate areas where you need to apply them.
+
+
 ## Requirements
 
 
