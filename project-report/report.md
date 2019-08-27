@@ -1,4 +1,4 @@
-# Sample Project Report :hand: fa18-523-000 fa18-523-001
+# Sample Project Report :o2: fa18-523-000 fa18-523-001
 
 | Gregor von Laszewski, Albert Zweistein
 | laszewski@gmail.com, zwei@example.edu
