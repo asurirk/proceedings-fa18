@@ -57,10 +57,10 @@ BUT DO NOT USE THEM FOR IMAGES, ANY IMAGE MUST HAVE A MEANINGFUL CAPTION AS SHOW
 
 Comment: Above and bellow in a paper means you ask the reader to look at their shoes or the ceiling :smiley:.
 
-+@fig:fromonetotheorther shows a nice figure exported from Powerpoint
++@fig:fa18-523-000-fromonetotheorther shows a nice figure exported from Powerpoint
 to png. If you like you can use this as a basis for your drawings.
 
-![A simple flow chart](images/from-one-to-the-other.png){#fig:fromonetotheorther}
+![A simple flow chart](images/from-one-to-the-other.png){#fig:fa18-523-000-fromonetotheorther}
 
 Figures must not be cited with an explicit number, but automated
 numbering must be used. Here is how we did it for this paper:
@@ -71,17 +71,17 @@ figure exported from Powerpoint to png.
 If you like you can use this as a basis
 for your drawings.
 
-![A simple flow chart](images/from-one-to-the-other.png){#fig:fromonetotheorther}
+![A simple flow chart](images/from-one-to-the-other.png){#fig:fa18-523-000-fromonetotheorther}
 ```
 
 If the paper is copied form another source you MUST use a citation in the caption. 
 
-![A simple flow chart [@vonLaszwski-fa18-sample-report]](images/from-one-to-the-other.png){#fig:fromonetotheorthertwo}
+![A simple flow chart [@vonLaszwski-fa18-sample-report]](images/from-one-to-the-other.png){#fig:fa18-523-000-fromonetotheorthertwo}
 
 This is done as follows
 
 ```
-![A simple flow chart [@vonLaszwski-fa18-sample-report]](images/from-one-to-the-other.png){#fig:fromonetotheorthertwo}
+![A simple flow chart [@vonLaszwski-fa18-sample-report]](images/from-one-to-the-other.png){#fig:fa18-523-000-fromonetotheorthertwo}
 ```
 
 ### Sylistic Issues
@@ -115,7 +115,7 @@ In case you want to copy part of this document you need to do this from raw mode
 
 **HOWEVER, YOU MUST NOT COPY THIS EXAMPLE IN YOUR REPORTS. IF YOU DO YOU MUST
 CHANGE THE IMAGE REFERNCES. THIS IS LOGICAL AS ALL IMAGE REFERNCES
-MUST BE UNIQUE.**
+MUST BE UNIQUE. Therefor we used the hid number as prefix to the labels.**
 
 
 ## Design 
